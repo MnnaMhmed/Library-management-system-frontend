@@ -1,0 +1,71 @@
+  <aside class="sidebar">
+    <h2><i class="fas fa-book"></i> Library</h2>
+    <div class="menu-item active" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i> Dashboard</div>
+    <div class="menu-item" onclick="showSection('books')"><i class="fas fa-book-open"></i> Books</div>
+    <div class="menu-item" onclick="showSection('members')"><i class="fas fa-users"></i> Members</div>
+    <div class="menu-item" onclick="showSection('notifications')"><i class="fas fa-bell"></i> Notifications</div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-content">
+    <!-- Dashboard -->
+    <section id="dashboard" class="section active">
+      <h1><i class="fas fa-tachometer-alt"></i> Dashboard</h1>
+      <div class="stats-grid">
+        <div class="card"><i class="fas fa-book"></i><h3>Total Books</h3><p id="totalBooks">0</p></div>
+        <div class="card"><i class="fas fa-book-reader"></i><h3>Borrowed</h3><p id="borrowedBooks">0</p></div>
+        <div class="card"><i class="fas fa-bookmark"></i><h3>Available</h3><p id="availableBooks">0</p></div>
+        <div class="card"><i class="fas fa-users"></i><h3>Members</h3><p id="totalMembers">0</p></div>
+      </div>
+
+      <div class="charts-container">
+        <div class="chart-box">
+          <h3><i class="fas fa-chart-pie"></i> Book Status</h3>
+          <canvas id="bookChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <h3><i class="fas fa-chart-bar"></i> Member Growth</h3>
+          <canvas id="memberChart"></canvas>
+        </div>
+        <div class="chart-box">
+          <h3><i class="fas fa-clock"></i> Borrow Trends</h3>
+          <canvas id="borrowChart"></canvas>
+        </div>
+      </div>
+            <!-- Recent Activity -->
+      <div class="recent-activity">
+        <h2><i class="fas fa-history"></i> Recent Activity</h2>
+        <ul id="recentActivityList"></ul>
+      </div>
+
+    </section>
+
+    <!-- Books -->
+    <section id="books" class="section">
+      <h1><i class="fas fa-book-open"></i> Manage Books</h1>
+      <form id="bookForm">
+        <input type="text" id="bookTitle" placeholder="Book Title" required />
+        <input type="text" id="bookAuthor" placeholder="Author" required />
+        <button type="submit"><i class="fas fa-plus"></i> Add</button>
+      </form>
+      <table>
+        <thead><tr><th>Title</th><th>Author</th><th>Status</th><th>Due</th><th>Actions</th></tr></thead>
+        <tbody id="bookList"></tbody>
+      </table>
+    </section>
+
+    <!-- Members -->
+    <section id="members" class="section">
+      <h1><i class="fas fa-users"></i> Members</h1>
+      <form id="memberForm">
+        <input type="text" id="memberName" placeholder="Member Name" required />
+        <button type="submit"><i class="fas fa-user-plus"></i> Add</button>
+      </form>
+      <ul id="memberList"></ul>
+    </section>
+
+    <!-- Notifications -->
+    <section id="notifications" class="section">
+      <h1><i class="fas fa-bell"></i> Notifications</h1>
+      <ul id="notificationList"></ul>
+    </section>
